@@ -23,9 +23,15 @@ class _EntriesPageState extends State<EntriesPage> {
               return Container(
                 margin: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                 height: 330,
-                child: WeekCard(
-                  key: Key(title),
-                  title: title,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/week',
+                        arguments: widget.items.elementAt(index));
+                  },
+                  child: WeekCard(
+                    key: Key(title),
+                    title: title,
+                  ),
                 ),
               );
             },

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:junction/screens/create_group.dart';
 import 'package:junction/screens/group.dart';
 import 'package:junction/screens/start.dart';
+import 'package:junction/screens/week.dart';
 
 void main() => runApp(Junction());
 
@@ -20,6 +21,7 @@ class Junction extends StatelessWidget {
         '/': (context) => StartPage(),
         '/create-group': (context) => CreateGroup(),
         '/group': (context) => GroupPage(),
+        '/week': (context) => WeekPage(),
       },
     );
   }
