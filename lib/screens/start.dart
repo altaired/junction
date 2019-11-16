@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/screens/achivements.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/screens/home.dart';
 import 'package:junction/screens/groups.dart';
@@ -16,7 +17,7 @@ class _StartPageState extends State<StartPage> {
     HomePage(),
     GroupsPage(),
     DashboardPage(),
-    DashboardPage(),
+    AchivementsPage(),
   ];
 
   final double iconSize = 34.0;
