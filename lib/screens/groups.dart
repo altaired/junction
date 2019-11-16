@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/services/data.dart';
 import 'package:junction/shared/header.dart';
 import 'package:junction/shared/models/group.dart';
 
@@ -8,7 +9,7 @@ class GroupsPage extends StatefulWidget {
 }
 
 class _GroupsPageState extends State<GroupsPage> {
-  final List<Group> _groups = [];
+  final List<Group> _groups = DataService.groups;
 
   @override
   void initState() {
