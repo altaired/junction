@@ -3,7 +3,9 @@ import 'package:junction/services/data.dart';
 import 'package:junction/shared/color_palatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 import 'package:junction/shared/icons/my_flutter_app_icons.dart';
+import 'package:junction/shared/score.dart';
 import 'package:junction/shared/table_row_text.dart';
+
 
 class DashboardPage extends StatelessWidget {
   List<Product> _products = DataService.products;
@@ -62,22 +64,7 @@ class DashboardPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            MyFlutterApp.leaf,
-                            size: 24,
-                            color: ColorPalatte.emeraldGreen,
-                          ),
-                          Text(
-                            " 1020102",
-                            style: TextStyle(
-                              fontSize: 32.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ]),
+                    child: Score(100100, 1)
                   ),
                 )
               ],
