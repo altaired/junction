@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ColorPalatte.dart';
 
 class Header extends StatelessWidget {
   final String title;
@@ -8,10 +9,10 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      color: Colors.green,
+      height: 75,
+      color: ColorPalatte.emeraldGreen,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Padding(
@@ -19,7 +20,7 @@ class Header extends StatelessWidget {
             child: Text(
               this.title,
               style: TextStyle(
-                fontSize: 35,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),

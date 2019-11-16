@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junction/services/data.dart';
+import 'package:junction/shared/ColorPalatte.dart';
 import 'package:junction/shared/header.dart';
 import 'package:junction/shared/models/group.dart';
 
@@ -69,7 +70,7 @@ class _GroupsPageState extends State<GroupsPage> {
           child: Padding(
             padding: EdgeInsets.all(16.0),
             child: FloatingActionButton(
-              backgroundColor: Colors.green,
+              backgroundColor: ColorPalatte.blueLilac,
               child: Icon(Icons.add),
               onPressed: () {
                 this._displayCreateGroup();
