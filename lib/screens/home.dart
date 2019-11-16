@@ -1,50 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:junction/shared/UserScoreCard.dart';
+import 'package:junction/shared/week_card.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 
-  final List<String> items = ["Hej"];
+  final List<String> items = ["Week 43", "Week 42", "Week 41"];
 }
 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: 32, bottom: 16, left: 16, right: 16),
-            child: Center(
-              child: Container(
-                padding: EdgeInsets.all(16),
-                color: Colors.green,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      "Week 1",
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
+      body: Padding(
+        padding: EdgeInsets.only(top: 16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  final String title = widget.items?.elementAt(index) ?? "";
+                  return Padding(
+                    padding: EdgeInsets.all(16),
+                    child: WeekCard(
+                      key: Key(title),
+                      title: title,
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Container(
-                        height: 200,
-                        child: Placeholder(),
-                      ),
-                    ),
-                  ],
-                ),
+                  );
+                },
+                itemCount: widget.items.length,
               ),
             ),
-          ),
-        ],
+      ]
+    ),
       ),
-    );
+      );
   }
 }
