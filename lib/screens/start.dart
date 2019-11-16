@@ -5,6 +5,8 @@ import 'package:junction/screens/entries.dart';
 import 'package:junction/screens/groups.dart';
 import 'package:junction/screens/leaderboard.dart';
 import 'package:junction/shared/ColorPalatte.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:junction/shared/icons/my_flutter_app_icons.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -23,6 +25,12 @@ class _StartPageState extends State<StartPage> {
     LeaderboardPage(),
   ];
 
+  final Widget achivementIcon = new SvgPicture.asset(
+      'assets/icons/trophy.svg',
+      color: ColorPalatte.blueLilac,
+      semanticsLabel: 'a purple trophy'
+  );
+
   final double iconSize = 34.0;
   int _selectedIndex = 0;
 
@@ -35,7 +43,6 @@ class _StartPageState extends State<StartPage> {
         unselectedItemColor: this.unselectedItemColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        backgroundColor: Colors.blue,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
@@ -61,7 +68,7 @@ class _StartPageState extends State<StartPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.star,
+              MyFlutterApp.trophy,
               size: this.iconSize,
             ),
             title: Text('Achivements'),
