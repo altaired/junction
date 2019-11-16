@@ -10,7 +10,7 @@ class CircleGraph extends StatelessWidget {
   final int refFootprint;
   final int myFootprint;
 
-  CircleGraph({this.refFootprint = 100, this.myFootprint = 150});
+  CircleGraph({this.refFootprint = 100, this.myFootprint = 160});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,14 @@ class CircleGraph extends StatelessWidget {
           alignment: Alignment.center,
           children: <Widget>[
             Container(
-              width: 30,
-              height: 30,
+              width: 40,
+              height: 40,
               decoration: new BoxDecoration(
                 color: Colors.blueGrey,
                 shape: BoxShape.circle,
               ),
             ),
-            Text(myFootprint.toString(), style: TextStyle(fontSize: 10, color: Colors.white)),
+            Text(myFootprint.toString(), style: TextStyle(fontSize: 12, color: Colors.white)),
           ],
         ),
         CircleWidget(size: myFootprint.toDouble(), color: myColor),
