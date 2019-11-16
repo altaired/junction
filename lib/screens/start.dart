@@ -3,6 +3,7 @@ import 'package:junction/screens/achivements.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/screens/entries.dart';
 import 'package:junction/screens/groups.dart';
+import 'package:junction/screens/leaderboard.dart';
 import 'package:junction/shared/ColorPalatte.dart';
 
 class StartPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class _StartPageState extends State<StartPage> {
     GroupsPage(),
     DashboardPage(),
     AchivementsPage(),
+    LeaderboardPage(),
   ];
 
   final double iconSize = 34.0;
@@ -65,6 +67,13 @@ class _StartPageState extends State<StartPage> {
             ),
             title: Text('Achivements'),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.list,
+              size: this.iconSize,
+            ),
+            title: Text('Leaderboards'),
+          ),
         ],
       ),
       body: AnimatedContainer(
@@ -76,7 +85,7 @@ class _StartPageState extends State<StartPage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      this._selectedIndex = index;
     });
   }
 }
