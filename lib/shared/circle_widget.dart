@@ -29,7 +29,7 @@ class DashedCirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
       ..color = color
-      ..strokeWidth = 4.0
+      ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
 
     final double radius = min(size.width, size.height) / 2;

@@ -19,6 +19,10 @@ class WeekCard extends StatelessWidget {
           color: g.getColor(),
           shape: BoxShape.circle,
         ),
+        child: Center(child:
+            Text(g.getAvgFootprint().toInt().toString(),
+              style: TextStyle(fontSize: 10, color: Colors.white)),
+        )
       );
     }).toList();
 
@@ -28,12 +32,12 @@ class WeekCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20),
             child: Text(
-              this.title,
+              title,
               style: TextStyle(
                 fontSize: 24,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -48,30 +52,32 @@ class WeekCard extends StatelessWidget {
               ]
             ),
           Container(
-            alignment: Alignment.center,
-            height: 40,
-            margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.black54,
-            ),
-            child: Text("Carbon dioxide: " + (80 / 3.5).toString(),
-            style: TextStyle(fontSize: 10, color: Colors.white)),
+            height: 20,
           ),
           Expanded(
-            child: ListView(
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 40),
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Table(
+              children: [
+                TableRow(
                   children: <Widget>[
                     Text("Bananas"),
                     Text("1337")
-                  ],
-                )
+                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
+                ),
+                TableRow(
+                  children: <Widget>[
+                    Text("Bananas"),
+                    Text("1337")
+                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
+                ),
+                TableRow(
+                  children: <Widget>[
+                    Text("Red Bull"),
+                    Text("99")
+                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
+                ),
               ],
             ),
-          )
+            )
         ],
       ),
     );
