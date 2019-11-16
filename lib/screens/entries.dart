@@ -29,6 +29,7 @@ class _EntriesPageState extends State<EntriesPage> {
               final String title = widget.items?.elementAt(index) ?? "";
               return Container(
                 height: 330,
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, '/week',
