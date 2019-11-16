@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:junction/screens/achivements.dart';
 import 'package:junction/screens/dashboard.dart';
-import 'package:junction/screens/home.dart';
+import 'package:junction/screens/entries.dart';
 import 'package:junction/screens/groups.dart';
+import 'package:junction/shared/ColorPalatte.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -10,8 +11,8 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
-  final Color unselectedItemColor = Color.fromARGB(100, 74, 74, 74);
-  final Color selectedItemColor = Colors.black;
+  final Color unselectedItemColor = ColorPalatte.blueLilac.withOpacity(0.5);
+  final Color selectedItemColor = ColorPalatte.blueLilac;
 
   final List<Widget> _widgets = [
     EntriesPage(),
