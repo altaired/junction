@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junction/shared/week_card.dart';
+import 'package:junction/shared/barchartaggragate.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -38,10 +39,10 @@ class _HomePageState extends State<HomePage> {
                 itemCount: widget.items.length,
               ),
             ),
-          ],
-        ),
+      ]
+    ),
       ),
-    );
+      );
   }
 
   void _displayGroupPage(BuildContext context) {

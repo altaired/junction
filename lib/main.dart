@@ -6,6 +6,7 @@ import 'package:junction/screens/dashboard.dart';
 import 'package:junction/screens/friends.dart';
 import 'package:junction/screens/profile.dart';
 import 'package:junction/screens/create_group.dart';
+import 'package:junction/screens/aggragate.dart';
 
 void main() => runApp(Junction());
 
@@ -26,6 +27,7 @@ class Junction extends StatelessWidget {
         '/dash': (context) => DashboardPage(),
         '/groups': (context) => GroupsPage(),
         '/create-group': (context) => CreateGroup(),
+        '/aggragate': (context) => AggragatePage(),
       },
     );
   }
