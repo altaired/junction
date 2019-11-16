@@ -10,7 +10,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 75,
-      color: ColorPalatte.emeraldGreen,
+      color: ColorPalatte.blueLilac,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,

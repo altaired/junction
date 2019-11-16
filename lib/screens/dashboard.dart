@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/shared/ColorPalatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -14,7 +15,8 @@ class DashboardPage extends StatelessWidget {
     return ListView(
       children: <Widget>[
         Center(
-          child: Card(
+          child: Container(
+            color: ColorPalatte.blueLilac,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +27,7 @@ class DashboardPage extends StatelessWidget {
                     children: <Widget>[
                       CircleAvatar(
                         radius: 30.0,
-                        backgroundColor: Colors.grey,
+                        backgroundColor: ColorPalatte.chromeGreen,
                         child: Center(
                           child: Text(
                             "SP",
