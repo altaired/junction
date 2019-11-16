@@ -17,8 +17,6 @@ class ProductList extends StatelessWidget {
       freqs.update(product, (exists) => exists +1, ifAbsent: () => 0);
     });
 
-    productAggragate...
-
   }
 
   /// Creates a stacked [BarChart] with sample data and no transition.
