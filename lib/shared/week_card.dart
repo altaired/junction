@@ -32,7 +32,13 @@ class WeekCard extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              child: Center(child: CircleWidget())
+              child: Center(child: Stack(
+                alignment: Alignment.center,
+                children: <Widget>[
+                  CircleWidget(size: 150),
+                  CircleWidget(size: 100),
+                ],
+              ))
             ),
           ),
         ],

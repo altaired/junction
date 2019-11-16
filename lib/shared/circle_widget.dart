@@ -5,29 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class CircleWidget extends StatelessWidget {
-  Widget child;
+  final double size;
 
-  CircleWidget({this.child = null});
+  CircleWidget({this.size = 150});
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: DashedCirclePainter(75, Colors.orange),
-      size: new Size(150, 150),
-      child: this.child
+      painter: DashedCirclePainter(Colors.orange),
+      size: new Size(size, size),
     );
   }
 }
 
 class DashedCirclePainter extends CustomPainter {
-  Offset size;
-  int dashes;
   Color color;
-  final double strokeWidth = 4.0;
 
-  DashedCirclePainter(double radius, this.color) {
-    this.size = new Offset(radius * 2, radius * 2);
-    this.dashes = (radius / 1.5).toInt();
+  DashedCirclePainter(this.color) {
   }
 
   @override
@@ -37,12 +31,14 @@ class DashedCirclePainter extends CustomPainter {
       ..strokeWidth = 4.0
       ..style = PaintingStyle.stroke;
 
+    final double radius = min(size.width, size.height) / 2;
+    final int dashes = (radius / 1.5).toInt();
     final double gap = pi / 180 * 2;
     final double singleAngle = (pi * 2) / dashes;
 
     for (int i = 0; i < dashes; i++) {
       canvas.drawArc(
-          new Rect.fromPoints(Offset.zero, new Offset(150, 150)),
+          new Rect.fromPoints(Offset.zero, new Offset(radius * 2, radius * 2)),
           gap + singleAngle * i, singleAngle - gap * 2, false, paint
       );
     }
