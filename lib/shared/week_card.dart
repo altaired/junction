@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:junction/models/group.dart';
+import 'package:junction/services/data.dart';
 import 'package:junction/shared/circle_graph.dart';
+
+import 'models/group.dart';
 
 class WeekCard extends StatelessWidget {
   final String title;
@@ -56,26 +58,16 @@ class WeekCard extends StatelessWidget {
           ),
           Expanded(
             child: Table(
-              children: [
-                TableRow(
-                  children: <Widget>[
-                    Text("Bananas"),
-                    Text("1337")
-                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
-                ),
-                TableRow(
-                  children: <Widget>[
-                    Text("Bananas"),
-                    Text("1337")
-                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
-                ),
-                TableRow(
-                  children: <Widget>[
-                    Text("Red Bull"),
-                    Text("99")
-                  ].map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w)).toList(),
-                ),
-              ],
+              children:
+                DataService.products
+                    .take(3)
+                    .map((p) => TableRow(
+                      children:
+                        [Text(p.desc.substring(0, 8)), Text(p.emission.toString())]
+                          .map((w) => Padding(padding: EdgeInsets.symmetric(horizontal: 40, vertical: 4), child: w))
+                          .toList()
+                    ))
+                    .toList()
             ),
             )
         ],
