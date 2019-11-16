@@ -8,11 +8,15 @@ class CreateGroup extends StatefulWidget {
 }
 
 class _CreateGroupState extends State<CreateGroup> {
-  final List<String> _members = [];
+  final List<GroupMember> _members = [];
   final TextEditingController _titleController = new TextEditingController();
-  final TextEditingController _memberController = new TextEditingController();
+  final TextEditingController _memberNameController =
+      new TextEditingController();
+  final TextEditingController _memberEmailController =
+      new TextEditingController();
   final FocusNode _titleFocus = FocusNode();
-  final FocusNode _memberFocus = FocusNode();
+  final FocusNode _memberNameFocus = FocusNode();
+  final FocusNode _memberEmailFocus = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +32,31 @@ class _CreateGroupState extends State<CreateGroup> {
               focusNode: this._titleFocus,
               textInputAction: TextInputAction.next,
               onFieldSubmitted: (term) {
-                _fieldFocusChange(context, _titleFocus, _memberFocus);
+                _fieldFocusChange(context, _titleFocus, _memberNameFocus);
               },
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Title',
+              ),
+            ),
+          ),
+          Divider(),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Add member"),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              controller: _memberNameController,
+              focusNode: this._memberNameFocus,
+              textInputAction: TextInputAction.next,
+              onFieldSubmitted: (term) {
+                _fieldFocusChange(context, _memberNameFocus, _memberEmailFocus);
+              },
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Name',
               ),
             ),
           ),
@@ -44,8 +68,8 @@ class _CreateGroupState extends State<CreateGroup> {
                 Expanded(
                   flex: 6,
                   child: TextFormField(
-                    controller: _memberController,
-                    focusNode: this._memberFocus,
+                    controller: _memberEmailController,
+                    focusNode: this._memberEmailFocus,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.done,
                     onFieldSubmitted: (value) => this._addMember(),
@@ -85,7 +109,7 @@ class _CreateGroupState extends State<CreateGroup> {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(this._members?.elementAt(index) ?? "None"),
+                    child: Text(this._members.elementAt(index).name ?? ""),
                   );
                 },
                 itemCount: this._members.length,
@@ -107,11 +131,16 @@ class _CreateGroupState extends State<CreateGroup> {
   }
 
   void _addMember() {
-    setState(() {
-      final String member = this._memberController.text;
-      this._members.add(member);
-      this._memberController.clear();
-    });
+    final String name = this._memberNameController.text;
+    final String email = this._memberEmailController.text;
+    if (name != "" && email != "") {
+      setState(() {
+        final GroupMember member = GroupMember(name: name, email: email);
+        this._members.add(member);
+        this._memberNameController.clear();
+        this._memberEmailController.clear();
+      });
+    }
   }
 
   void _fieldFocusChange(

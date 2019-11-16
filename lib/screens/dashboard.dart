@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:junction/shared/barchartaggragate.dart';
+import 'package:junction/shared/bar_chart.dart';
 
 class DashboardPage extends StatelessWidget {
   final List<Product> _products = [
@@ -73,7 +73,7 @@ class DashboardPage extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Container(
                 height: 200,
-                child: BarChartAggragate.withSampleData(),
+                child: BarChart.withSampleData(),
               ),
             ),
           ),

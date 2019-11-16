@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/screens/home.dart';
 import 'package:junction/screens/groups.dart';
+import 'package:junction/screens/leaderboard.dart';
 
 class StartPage extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _StartPageState extends State<StartPage> {
     HomePage(),
     GroupsPage(),
     DashboardPage(),
-    DashboardPage(),
+    LearderboardPage(),
   ];
 
   final double iconSize = 34.0;

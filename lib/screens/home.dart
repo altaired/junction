@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:junction/shared/header.dart';
 import 'package:junction/shared/week_card.dart';
-import 'package:junction/shared/barchartaggragate.dart';
+import 'package:junction/shared/bar_chart.dart';
 
 class HomePage extends StatefulWidget {
   @override
