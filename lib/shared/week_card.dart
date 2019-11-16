@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/shared/circle_widget.dart';
 
 class WeekCard extends StatelessWidget {
   final String title;
@@ -11,12 +12,12 @@ class WeekCard extends StatelessWidget {
       height: 250,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.green,
+        color: Colors.black54,
       ),
       padding: EdgeInsets.all(16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -24,13 +25,14 @@ class WeekCard extends StatelessWidget {
               this.title,
               style: TextStyle(
                 fontSize: 24,
+                color: Colors.white,
               ),
             ),
           ),
           Expanded(
             flex: 1,
             child: Container(
-              child: Placeholder(),
+              child: Center(child: CircleWidget())
             ),
           ),
         ],
