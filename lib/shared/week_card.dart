@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:junction/services/data.dart';
 import 'package:junction/shared/circle_graph.dart';
@@ -6,9 +8,9 @@ import 'models/group.dart';
 
 class WeekCard extends StatelessWidget {
   final String title;
-  List<Group> groups = [new Group(), new Group(), new Group()];
+  List<Group> groups;
 
-  WeekCard({Key key, @required this.title}) : super(key: key);
+  WeekCard({Key key, @required this.title, @required List<Group> this.groups}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,9 @@ class WeekCard extends StatelessWidget {
       );
     }).toList();
 
+    Random rng = new Random();
+    int myEmission = (rng.nextInt(8) * 10) + 50;
+
     return Card(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -46,7 +51,7 @@ class WeekCard extends StatelessWidget {
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Center(child: CircleGraph(80, groups)),
+                Center(child: CircleGraph(myEmission, groups)),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: groupColors,

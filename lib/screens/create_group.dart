@@ -120,7 +120,7 @@ class _CreateGroupState extends State<CreateGroup> {
             onPressed: () {
               final String title = this._titleController.text;
               final Group group =
-                  new Group(title: title, members: this._members);
+                  new Group(title, this._members, Colors.orange, 2.0);
               Navigator.pop(context, group);
             },
             child: Text("Save"),
