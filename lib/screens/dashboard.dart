@@ -43,11 +43,13 @@ class DashboardPage extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               "Simon Persson",
-                              style: TextStyle(fontSize: 20.0),
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
                             ),
                             Text(
-                              "Joined",
-                              style: TextStyle(fontSize: 16.0),
+                              "Joined 2019-11-16",
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
                             ),
                           ],
                         ),
@@ -60,7 +62,7 @@ class DashboardPage extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "1020102",
-                      style: TextStyle(fontSize: 32.0),
+                      style: TextStyle(fontSize: 32.0, color: Colors.white),
                     ),
                   ),
                 )
@@ -68,6 +70,7 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
         ),
+        Divider(),
         Center(
           child: Card(
             child: Padding(
@@ -120,7 +123,42 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
+        Center(
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Need a boost?",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                    RaisedButton(
+                      color: ColorPalatte.blueLilac,
+                      child: Text("Plant trees",
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      "1 tree = \$1",
+                      style: TextStyle(fontSize: 14.0),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
