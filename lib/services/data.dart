@@ -6,6 +6,14 @@ class DataService {
   static final User me =
       User(name: "Tomuva Jappalainen", email: "vappa@hoplax.fi");
 
+  static final Leaderboard groupLeaderboard = Leaderboard(
+    title: "Group",
+    entries: [
+      LeaderboardEntry(name: "Simon Persson", score: 20012, emission: 2002),
+      LeaderboardEntry(name: "Alexander Tuoma", score: 20011, emission: 2001),
+    ],
+  );
+
   static final List<Leaderboard> leaderboards = [
     Leaderboard(
       title: "Stockholm",
