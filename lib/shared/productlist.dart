@@ -64,6 +64,9 @@ class ProductList extends StatelessWidget {
     },
     itemCount: productAggregate.length,
     ),
+    )
+    ]
+    );
   }
 }
 
