@@ -1,8 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:junction/shared/ColorPalatte.dart';
+import 'package:junction/shared/color_palatte.dart';
 
 import 'circle_widget.dart';
 import 'models/group.dart';
@@ -18,17 +17,18 @@ class CircleGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final myColor =
-      groups
-          .map((g) => g.getAvgFootprint())
-          .where((fp) => fp < myFootprint).length != 0
-          ? Colors.redAccent
-          : Colors.greenAccent;
+    final myColor = groups
+                .map((g) => g.getAvgFootprint())
+                .where((fp) => fp < myFootprint)
+                .length !=
+            0
+        ? Colors.redAccent
+        : Colors.greenAccent;
 
-    List<Widget> refCircles =
-      groups
-          .map((g) => CircleWidget(size: g.getAvgFootprint(), color: g.getColor()))
-          .toList();
+    List<Widget> refCircles = groups
+        .map(
+            (g) => CircleWidget(size: g.getAvgFootprint(), color: g.getColor()))
+        .toList();
 
     return Stack(
       alignment: Alignment.center,
@@ -44,7 +44,8 @@ class CircleGraph extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
             ),
-            Text(myFootprint.toString(), style: TextStyle(fontSize: 12, color: Colors.white)),
+            Text(myFootprint.toString(),
+                style: TextStyle(fontSize: 12, color: Colors.white)),
           ],
         ),
         ...refCircles,

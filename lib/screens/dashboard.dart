@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junction/services/data.dart';
-import 'package:junction/shared/ColorPalatte.dart';
+import 'package:junction/shared/color_palatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 import 'package:junction/shared/icons/my_flutter_app_icons.dart';
 
