@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:junction/shared/ColorPalatte.dart';
+import 'package:junction/shared/color_palatte.dart';
 
 class BarChart extends StatelessWidget {
   final List<charts.Series> seriesList;
@@ -67,7 +67,7 @@ class BarChart extends StatelessWidget {
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) =>
             carbonData.totalCarbon - carbonData.climateCompensated,
-        colorFn: (a,b) => toChartColor(ColorPalatte.saphireBlue),
+        colorFn: (a, b) => toChartColor(ColorPalatte.saphireBlue),
         data: personalCarbonData,
       ),
       new charts.Series<OrdinalCarbonData, String>(
@@ -87,7 +87,7 @@ class BarChart extends StatelessWidget {
     ];
   }
 
-  static charts.Color toChartColor(Color color){
+  static charts.Color toChartColor(Color color) {
     return new charts.Color(
         r: color.red, g: color.green, b: color.blue, a: color.alpha);
   }
@@ -98,6 +98,5 @@ class OrdinalCarbonData {
   final int totalCarbon;
   final int climateCompensated;
 
-  OrdinalCarbonData(this.date, this.totalCarbon, this.climateCompensated){}
-
+  OrdinalCarbonData(this.date, this.totalCarbon, this.climateCompensated) {}
 }
