@@ -11,6 +11,8 @@ class _CreateGroupState extends State<CreateGroup> {
   final List<String> _members = [];
   final TextEditingController _titleController = new TextEditingController();
   final TextEditingController _memberController = new TextEditingController();
+  final FocusNode _titleFocus = FocusNode();
+  final FocusNode _memberFocus = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,13 @@ class _CreateGroupState extends State<CreateGroup> {
           Header(title: "Create group"),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
+            child: TextFormField(
               controller: _titleController,
+              focusNode: this._titleFocus,
+              textInputAction: TextInputAction.next,
+              onFieldSubmitted: (term) {
+                _fieldFocusChange(context, _titleFocus, _memberFocus);
+              },
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Title',
@@ -36,8 +43,12 @@ class _CreateGroupState extends State<CreateGroup> {
               children: <Widget>[
                 Expanded(
                   flex: 6,
-                  child: TextField(
+                  child: TextFormField(
                     controller: _memberController,
+                    focusNode: this._memberFocus,
+                    keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.done,
+                    onFieldSubmitted: (value) => this._addMember(),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'name@example.com',
@@ -48,13 +59,7 @@ class _CreateGroupState extends State<CreateGroup> {
                   flex: 1,
                   child: IconButton(
                     icon: Icon(Icons.add),
-                    onPressed: () {
-                      setState(() {
-                        final String member = this._memberController.text;
-                        this._members.add(member);
-                        this._memberController.clear();
-                      });
-                    },
+                    onPressed: () => this._addMember(),
                   ),
                 )
               ],
@@ -99,5 +104,19 @@ class _CreateGroupState extends State<CreateGroup> {
         ],
       ),
     );
+  }
+
+  void _addMember() {
+    setState(() {
+      final String member = this._memberController.text;
+      this._members.add(member);
+      this._memberController.clear();
+    });
+  }
+
+  void _fieldFocusChange(
+      BuildContext context, FocusNode currentFocus, FocusNode nextFocus) {
+    currentFocus.unfocus();
+    FocusScope.of(context).requestFocus(nextFocus);
   }
 }
