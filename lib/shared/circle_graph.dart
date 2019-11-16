@@ -1,12 +1,11 @@
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:junction/models/group.dart';
 import 'package:junction/shared/ColorPalatte.dart';
 
 import 'circle_widget.dart';
+import 'models/group.dart';
 
 class CircleGraph extends StatelessWidget {
   int myFootprint;
