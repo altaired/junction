@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ColorPalatte.dart';
+import 'color_palatte.dart';
 
 class Header extends StatelessWidget {
   final String title;

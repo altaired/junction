@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:junction/services/data.dart';
+import 'package:junction/shared/color_palatte.dart';
+import 'package:junction/shared/header.dart';
 import 'package:junction/shared/models/leaderboard.dart';
 import 'package:junction/shared/table_row_text.dart';
 
@@ -19,20 +21,11 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(top: 32.0, left: 0, right: 0, bottom: 8.0),
-          child: Center(
-            child: Text(
-              "Leaderboards",
-              style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+        Header(
+          title: "Leaderboard",
         ),
         Padding(
-          padding: EdgeInsets.only(top: 8.0, left: 0, right: 0, bottom: 8.0),
+          padding: EdgeInsets.only(top: 0.0, left: 0, right: 0, bottom: 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: widget.leaderboards.map((board) {
@@ -43,10 +36,15 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
                     height: 55.0,
                     color: widget.leaderboards[this._selectedIndex].title ==
                             board.title
-                        ? Colors.grey
-                        : Colors.blue,
+                        ? ColorPalatte.blueLilac.withOpacity(0.5)
+                        : ColorPalatte.blueLilac,
                     child: Center(
-                      child: Text(board.title),
+                      child: Text(
+                        board.title,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ),
                   onTap: () {

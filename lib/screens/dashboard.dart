@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junction/services/data.dart';
-import 'package:junction/shared/ColorPalatte.dart';
+import 'package:junction/shared/color_palatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 import 'package:junction/shared/icons/my_flutter_app_icons.dart';
 
@@ -44,11 +44,13 @@ class DashboardPage extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               "Simon Persson",
-                              style: TextStyle(fontSize: 20.0),
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
                             ),
                             Text(
-                              "Joined",
-                              style: TextStyle(fontSize: 16.0),
+                              "Global rank #209",
+                              style: TextStyle(
+                                  fontSize: 16.0, color: Colors.white),
                             ),
                           ],
                         ),
@@ -62,23 +64,26 @@ class DashboardPage extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                        Icon(
-                          MyFlutterApp.leaf,
-                          size: 24,
-                          color: ColorPalatte.emeraldGreen,
+                          Icon(
+                            MyFlutterApp.leaf,
+                            size: 24,
+                            color: ColorPalatte.emeraldGreen,
                           ),
                           Text(
-                          " 1020102",
-                          style: TextStyle(fontSize: 32.0),
-                        ),
-                        ]
-                  ),
+                            " 1020102",
+                            style: TextStyle(
+                              fontSize: 32.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ]),
                   ),
                 )
               ],
             ),
           ),
         ),
+        Divider(),
         Center(
           child: Card(
             child: Padding(
@@ -131,7 +136,42 @@ class DashboardPage extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
+        Center(
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Need a boost?",
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                    RaisedButton(
+                      color: ColorPalatte.blueLilac,
+                      child: Text("Plant trees",
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      "1 tree = \$1",
+                      style: TextStyle(fontSize: 14.0),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
