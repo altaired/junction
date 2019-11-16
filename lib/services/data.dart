@@ -24,12 +24,18 @@ class DataService {
     Product(desc: "Pirkka omena Gala kg", amount: 1, emission: 0.25),
     Product(desc: "Clementine kg", amount: 1, emission: 0.6),
     Product(desc: "Pirkka whipped cream 2dl", amount: 1, emission: 0.85),
-    Product(desc: "Oululainen reissumies dark 4pcs/280g", amount: 1, emission: 0.16),
+    Product(
+        desc: "Oululainen reissumies dark 4pcs/280g",
+        amount: 1,
+        emission: 0.16),
     Product(desc: "Myllyn Paras macaroni 400g", amount: 1, emission: 0.36),
     Product(desc: "Pirkka free hens egg M10 580g", amount: 2, emission: 0.35),
     Product(desc: "Kulta Katriina coffee 500g fg", amount: 1, emission: 1.15),
     Product(desc: "Valio cottage cheese 200g", amount: 1, emission: 0.4),
-    Product(desc: "Pirkka Ice lettuce 100g bag Finland 1cl", amount: 1, emission: 0.05),
+    Product(
+        desc: "Pirkka Ice lettuce 100g bag Finland 1cl",
+        amount: 1,
+        emission: 0.05),
     Product(desc: "Pirkka burger 100g", amount: 4, emission: 0.62),
     Product(desc: "Onion Finland kg", amount: 2, emission: 0.1),
   ];
@@ -52,36 +58,50 @@ class DataService {
     Leaderboard(
       title: "Europe",
       entries: [
-        LeaderboardEntry(
-            name: "Karl-Oskar Rikas", score: 25, emission: 25),
+        LeaderboardEntry(name: "Karl-Oskar Rikas", score: 25, emission: 25),
         LeaderboardEntry(name: "Simon Persson", score: 34, emission: 34),
-
       ],
     ),
   ];
 
   static final List<Group> groups = [
-    Group("Junction Team", [
-      GroupMember(name: "Simon Persson", email: "simon@akep.se"),
-      GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
-      GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
-      GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
-    ], Colors.deepPurple, 90.0),
-    Group("Hack Team", [
-      GroupMember(name: "Simon Persson", email: "simon@akep.se"),
-      GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
-      GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
-      GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
-    ], Colors.deepOrange, 100.0),
-    Group("Gym Team", [
-      GroupMember(name: "Simon Persson", email: "simon@akep.se"),
-      GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
-      GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
-      GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
-    ], Colors.orange, 120.0),
+    Group(
+        "Junction Team",
+        [
+          GroupMember(name: "Simon Persson", email: "simon@akep.se"),
+          GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
+          GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
+          GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
+        ],
+        Colors.deepPurple,
+        90.0),
+    Group(
+        "Hack Team",
+        [
+          GroupMember(name: "Simon Persson", email: "simon@akep.se"),
+          GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
+          GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
+          GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
+        ],
+        Colors.deepOrange,
+        100.0),
+    Group(
+        "Gym Team",
+        [
+          GroupMember(name: "Simon Persson", email: "simon@akep.se"),
+          GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
+          GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
+          GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
+        ],
+        Colors.orange,
+        120.0),
   ];
-  
-  static final List<Color> colors = [Colors.orange, Colors.deepPurple, Colors.deepOrange];
+
+  static final List<Color> colors = [
+    Colors.orange,
+    Colors.deepPurple,
+    Colors.deepOrange
+  ];
 
   static List<List<Group>> weeks() {
     List<List<Group>> result = [];

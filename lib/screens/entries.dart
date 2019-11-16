@@ -8,7 +8,7 @@ class EntriesPage extends StatefulWidget {
   @override
   _EntriesPageState createState() => _EntriesPageState();
 
-  final List<String> items = ["Week 43", "Week 42", "Week 41"];
+  final List<String> items = ["November", "October", "September"];
 }
 
 class _EntriesPageState extends State<EntriesPage> {
@@ -30,11 +30,10 @@ class _EntriesPageState extends State<EntriesPage> {
               final String title = widget.items?.elementAt(index) ?? "";
               return Container(
                 margin: EdgeInsets.symmetric(
-                  horizontal: 20.0,
+                  horizontal: 10.0,
                   vertical: 8.0,
                 ),
                 height: 330,
-                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, '/week',
