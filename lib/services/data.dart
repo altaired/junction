@@ -38,23 +38,24 @@ class DataService {
     Leaderboard(
       title: "Stockholm",
       entries: [
-        LeaderboardEntry(name: "Simon Persson", score: 20012, emission: 2002),
-        LeaderboardEntry(name: "Alexander Tuoma", score: 20011, emission: 2001),
+        LeaderboardEntry(name: "Simon Persson", score: 34, emission: 34),
+        LeaderboardEntry(name: "Alexander Tuoma", score: 38, emission: 38),
       ],
     ),
     Leaderboard(
       title: "Sweden",
       entries: [
-        LeaderboardEntry(name: "Simon Persson", score: 20012, emission: 2002),
-        LeaderboardEntry(name: "Hampus Weslien", score: 20011, emission: 2001),
+        LeaderboardEntry(name: "Simon Persson", score: 34, emission: 34),
+        LeaderboardEntry(name: "Hampus Weslien", score: 36, emission: 36),
       ],
     ),
     Leaderboard(
       title: "Europe",
       entries: [
-        LeaderboardEntry(name: "Simon Persson", score: 20012, emission: 2002),
         LeaderboardEntry(
-            name: "Karl-Oskar Rikas", score: 20011, emission: 2001),
+            name: "Karl-Oskar Rikas", score: 25, emission: 25),
+        LeaderboardEntry(name: "Simon Persson", score: 34, emission: 34),
+
       ],
     ),
   ];
