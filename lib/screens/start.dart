@@ -14,7 +14,7 @@ class _StartPageState extends State<StartPage> {
   final Color selectedItemColor = Colors.black;
 
   final List<Widget> _widgets = [
-    HomePage(),
+    EntriesPage(),
     GroupsPage(),
     DashboardPage(),
     AchivementsPage(),
