@@ -8,7 +8,7 @@ class Score extends StatelessWidget {
   final int score;
   final double size;
 
-  Score(this.score, this.size)
+  Score(this.score, this.size){}
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,7 @@ class Score extends StatelessWidget {
     style: TextStyle(
     fontSize: 32.0*size,
     ))
+    ]
     );
   }
 

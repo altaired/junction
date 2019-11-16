@@ -34,6 +34,7 @@ class _EntriesPageState extends State<EntriesPage> {
                   vertical: 8.0,
                 ),
                 height: 330,
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, '/week',
