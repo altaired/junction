@@ -16,18 +16,23 @@ class _EntriesPageState extends State<EntriesPage> {
 
   @override
   Widget build(BuildContext context) {
-   return Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Header(title: "Entries"),
         Expanded(
           child: ListView.builder(
             itemBuilder: (BuildContext context, int index) {
-              weeks[index].sort((a, b) => (a.avgFootprint - b.avgFootprint).toInt());
+              weeks[index]
+                  .sort((a, b) => (a.avgFootprint - b.avgFootprint).toInt());
               List<Group> week = weeks[index];
 
               final String title = widget.items?.elementAt(index) ?? "";
               return Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 20.0,
+                  vertical: 8.0,
+                ),
                 height: 330,
                 child: InkWell(
                   onTap: () {
