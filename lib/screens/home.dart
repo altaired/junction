@@ -17,6 +17,12 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            MaterialButton(
+              onPressed: () {
+                _displayGroupPage(context);
+              },
+              child: Text("Groups"),
+            ),
             Expanded(
               child: ListView.builder(
                 itemBuilder: (BuildContext context, int index) {
@@ -36,5 +42,9 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  void _displayGroupPage(BuildContext context) {
+    Navigator.pushNamed(context, '/groups');
   }
 }
