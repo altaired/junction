@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:junction/screens/groups.dart';
-import 'package:junction/screens/home.dart';
-import 'package:junction/screens/dashboard.dart';
-import 'package:junction/screens/friends.dart';
-import 'package:junction/screens/profile.dart';
 import 'package:junction/screens/create_group.dart';
-import 'package:junction/screens/aggragate.dart';
+import 'package:junction/screens/group.dart';
+import 'package:junction/screens/start.dart';
 
 void main() => runApp(Junction());
 
@@ -21,13 +17,9 @@ class Junction extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => HomePage(),
-        '/profile': (context) => ProfilePage(),
-        '/friends': (context) => FriendsPage(),
-        '/dash': (context) => DashboardPage(),
-        '/groups': (context) => GroupsPage(),
+        '/': (context) => StartPage(),
         '/create-group': (context) => CreateGroup(),
-        '/aggragate': (context) => AggragatePage(),
+        '/group': (context) => GroupPage(),
       },
     );
   }

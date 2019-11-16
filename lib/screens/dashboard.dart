@@ -1,9 +1,135 @@
 import 'package:flutter/material.dart';
+import 'package:junction/shared/barchartaggragate.dart';
 
 class DashboardPage extends StatelessWidget {
+  final List<Product> _products = [
+    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
+    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
+    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
+    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return ListView(
+      children: <Widget>[
+        Center(
+          child: Card(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 30.0,
+                        backgroundColor: Colors.grey,
+                        child: Center(
+                          child: Text(
+                            "SP",
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Simon Persson",
+                              style: TextStyle(fontSize: 20.0),
+                            ),
+                            Text(
+                              "Joined",
+                              style: TextStyle(fontSize: 16.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text(
+                      "1020102",
+                      style: TextStyle(fontSize: 32.0),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+        Center(
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                height: 200,
+                child: BarChartAggragate.withSampleData(),
+              ),
+            ),
+          ),
+        ),
+        Center(
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 8.0, bottom: 16.0),
+                      child: Text(
+                        "per product",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Table(
+                      children: this._products.map((pr) {
+                        return TableRow(
+                          children: <Widget>[
+                            Center(child: Text(pr.desc)),
+                            Center(child: Text(pr.amount.toString() + " st")),
+                            Center(
+                                child: Text(pr.emission.toString() + " CO2")),
+                            Center(
+                              child: Text((pr.amount * pr.emission).toString() +
+                                  " CO2"),
+                            ),
+                          ],
+                        );
+                      }).toList(),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    );
   }
+}
+
+class Product {
+  final String desc;
+  final double amount;
+  final double emission;
+
+  Product(
+      {@required this.desc, @required this.amount, @required this.emission});
 }
