@@ -21,7 +21,7 @@ class GroupPage extends StatelessWidget {
               child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Table(
-              children: TableRowBuilder.build(board),
+              children: LeaderboardRowBuilder.build(board),
             ),
           )),
         ],

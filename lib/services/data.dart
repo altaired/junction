@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/shared/models/group.dart';
 import 'package:junction/shared/models/leaderboard.dart';
@@ -17,13 +18,13 @@ class DataService {
 
   static final List<Product> products = [
     Product(desc: "Pirkka milk semi skimmed 1 l", amount: 2, emission: 0.9),
+    Product(desc: "HK sininen link sausage 580g", amount: 2, emission: 3.6),
+    Product(desc: "Pepper red foreign kg", amount: 1, emission: 1.7),
     Product(desc: "Pirkka banaani kg", amount: 1, emission: 0.5),
     Product(desc: "Pirkka omena Gala kg", amount: 1, emission: 0.25),
     Product(desc: "Clementine kg", amount: 1, emission: 0.6),
     Product(desc: "Pirkka whipped cream 2dl", amount: 1, emission: 0.85),
     Product(desc: "Oululainen reissumies dark 4pcs/280g", amount: 1, emission: 0.16),
-    Product(desc: "Pepper red foreign kg", amount: 1, emission: 1.7),
-    Product(desc: "HK sininen link sausage 580g", amount: 2, emission: 3.6),
     Product(desc: "Myllyn Paras macaroni 400g", amount: 1, emission: 0.36),
     Product(desc: "Pirkka free hens egg M10 580g", amount: 2, emission: 0.35),
     Product(desc: "Kulta Katriina coffee 500g fg", amount: 1, emission: 1.15),
@@ -59,11 +60,35 @@ class DataService {
   ];
 
   static final List<Group> groups = [
-    Group(title: "Junction Team", members: [
+    Group("Junction Team", [
       GroupMember(name: "Simon Persson", email: "simon@akep.se"),
       GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
       GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
       GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
-    ])
+    ], Colors.deepPurple, 90.0),
+    Group("Hack Team", [
+      GroupMember(name: "Simon Persson", email: "simon@akep.se"),
+      GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
+      GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
+      GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
+    ], Colors.deepOrange, 100.0),
+    Group("Gym Team", [
+      GroupMember(name: "Simon Persson", email: "simon@akep.se"),
+      GroupMember(name: "Alexander Tuoma", email: "tuoma@kth.se"),
+      GroupMember(name: "Hampus Weslien", email: "hampus@lth.se"),
+      GroupMember(name: "Karl-Oskar Rikas", email: "ko@lth.se")
+    ], Colors.orange, 120.0),
   ];
+  
+  static final List<Color> colors = [Colors.orange, Colors.deepPurple, Colors.deepOrange];
+
+  static List<List<Group>> weeks() {
+    List<List<Group>> result = [];
+    for (int i = 0; i < 3; i++) {
+      result.add(groups.map((g) {
+        return Group(g.title, g.members, g.color, Group.genAvgFootprint());
+      }).toList());
+    }
+    return result;
+  }
 }

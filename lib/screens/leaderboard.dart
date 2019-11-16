@@ -65,7 +65,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
               milliseconds: 500,
             ),
             child: Table(
-                children: TableRowBuilder.build(
+                children: LeaderboardRowBuilder.build(
                     widget.leaderboards.elementAt(this._selectedIndex))),
           ),
         )

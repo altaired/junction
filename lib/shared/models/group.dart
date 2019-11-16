@@ -8,7 +8,12 @@ class Group {
   Color color = genColor();
   double avgFootprint = genAvgFootprint();
 
-  Group({@required this.title, @required this.members});
+  Group(String title, List<GroupMember> members, Color c, double avg) {
+    this.title = title;
+    this.members = members;
+    color = c;
+    avgFootprint = avg;
+  }
 
   void add(GroupMember member) {
     this.members.add(member);
@@ -18,8 +23,16 @@ class Group {
     return color;
   }
 
+  void setColor(Color c) {
+    color = c;
+  }
+
   double getAvgFootprint() {
     return avgFootprint;
+  }
+
+  void setAvgFootprint(double avg) {
+    avgFootprint = avg;
   }
 
   static Color genColor() {

@@ -4,6 +4,8 @@ import 'package:junction/shared/color_palatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 import 'package:junction/shared/icons/my_flutter_app_icons.dart';
 import 'package:junction/shared/score.dart';
+import 'package:junction/shared/table_row_text.dart';
+
 
 class DashboardPage extends StatelessWidget {
   List<Product> _products = DataService.products;
@@ -102,20 +104,7 @@ class DashboardPage extends StatelessWidget {
                   ),
                   Center(
                     child: Table(
-                      children: this._products.map((pr) {
-                        return TableRow(
-                          children: <Widget>[
-                            Center(child: Text(pr.desc)),
-                            Center(child: Text(pr.amount.toString() + " st")),
-                            Center(
-                                child: Text(pr.emission.toString() + " CO2")),
-                            Center(
-                              child: Text((pr.amount * pr.emission).toString() +
-                                  " CO2"),
-                            ),
-                          ],
-                        );
-                      }).toList(),
+                      children: ProductRowBuilder.build(this._products),
                     ),
                   )
                 ],
@@ -146,7 +135,9 @@ class DashboardPage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                           )),
-                      onPressed: () {},
+                      onPressed: () {
+                        showAboutDialog(context: context, applicationName: "You planted a tree");
+                      },
                     ),
                     Text(
                       "1 tree = \$1",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/screens/dashboard.dart';
 import 'package:junction/shared/models/leaderboard.dart';
 
 class TableRowText extends StatelessWidget {
@@ -26,7 +27,7 @@ class TableRowText extends StatelessWidget {
   }
 }
 
-class TableRowBuilder {
+class LeaderboardRowBuilder {
   static List<TableRow> build(Leaderboard l) {
     final List<TableRow> rows = [];
     rows.add(TableRow(
@@ -62,6 +63,61 @@ class TableRowBuilder {
           ),
           TableRowText(
             text: entry.score.toString(),
+            alignLeft: false,
+          ),
+        ],
+      ));
+    });
+    return rows;
+  }
+}
+
+class ProductRowBuilder {
+  static List<TableRow> build(List<Product> l) {
+    final List<TableRow> rows = [];
+    rows.add(TableRow(
+      children: <Widget>[
+        TableRowText(
+          text: "Desc",
+          alignLeft: true,
+          bold: true,
+        ),
+        TableRowText(
+          text: "Amount",
+          alignLeft: false,
+          bold: true,
+        ),
+        TableRowText(
+          text: "CO2",
+          alignLeft: false,
+          bold: true,
+        ),
+        TableRowText(
+          text: "Total",
+          alignLeft: false,
+          bold: true,
+        ),
+      ],
+    ));
+    l.sort(
+        (a, b) => ((b.emission * b.amount) - (a.emission * a.amount)).toInt());
+    l.forEach((entry) {
+      rows.add(TableRow(
+        children: <Widget>[
+          TableRowText(
+            text: entry.desc,
+            alignLeft: true,
+          ),
+          TableRowText(
+            text: entry.amount.toString(),
+            alignLeft: false,
+          ),
+          TableRowText(
+            text: entry.emission.toString(),
+            alignLeft: false,
+          ),
+          TableRowText(
+            text: (entry.emission * entry.amount).toString(),
             alignLeft: false,
           ),
         ],
