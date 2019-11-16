@@ -4,6 +4,7 @@ import 'package:junction/screens/home.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/screens/friends.dart';
 import 'package:junction/screens/profile.dart';
+import 'package:junction/screens/aggragate.dart';
 
 void main() => runApp(Junction());
 
@@ -22,6 +23,7 @@ class Junction extends StatelessWidget {
         '/profile': (context) => ProfilePage(),
         '/friends': (context) => FriendsPage(),
         '/dash': (context) => DashboardPage(),
+        '/aggragate': (context) => AggragatePage(),
       },
     );
   }

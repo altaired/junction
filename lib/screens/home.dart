@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/shared/UserScoreCard.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
