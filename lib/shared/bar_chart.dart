@@ -32,25 +32,25 @@ class BarChart extends StatelessWidget {
 
   static List<charts.Series<OrdinalCarbonData, String>> _createSampleData() {
     final personalCarbonData = [
-      new OrdinalCarbonData('week 34', 35000, 6000),
-      new OrdinalCarbonData('week 35', 42000, 4000),
-      new OrdinalCarbonData('week 36', 40000, 5000),
-      new OrdinalCarbonData('week 37', 47000, 3000),
+      new OrdinalCarbonData('week 34', 35, 6),
+      new OrdinalCarbonData('week 35', 42, 4),
+      new OrdinalCarbonData('week 36', 40, 5),
+      new OrdinalCarbonData('week 37', 47, 3),
     ];
 
     final groupTargetLineData = [
-      new OrdinalCarbonData('week 34', 30000, 0),
-      new OrdinalCarbonData('week 35', 30000, 0),
-      new OrdinalCarbonData('week 36', 30000, 0),
-      new OrdinalCarbonData('week 37', 30000, 0),
+      new OrdinalCarbonData('week 34', 30, 0),
+      new OrdinalCarbonData('week 35', 30, 0),
+      new OrdinalCarbonData('week 36', 30, 0),
+      new OrdinalCarbonData('week 37', 30, 0),
     ];
 
     // the next target data line becomes the sum of it self and the previous, so 30000 + 20000 = 50000 in the graph .. don't ask me why
     final personalTargetLineData = [
-      new OrdinalCarbonData('week 34', 20000, 0),
-      new OrdinalCarbonData('week 35', 20000, 0),
-      new OrdinalCarbonData('week 36', 20000, 0),
-      new OrdinalCarbonData('week 37', 20000, 0),
+      new OrdinalCarbonData('week 34', 20, 0),
+      new OrdinalCarbonData('week 35', 20, 0),
+      new OrdinalCarbonData('week 36', 20, 0),
+      new OrdinalCarbonData('week 37', 20, 0),
     ];
 
     return [
