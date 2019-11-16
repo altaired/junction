@@ -10,7 +10,6 @@ class WeekCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     List<Widget> groupColors = groups.map((g) {
       return Container(
         width: 30,
@@ -23,13 +22,7 @@ class WeekCard extends StatelessWidget {
       );
     }).toList();
 
-    return Container(
-      height: 300,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.black54,
-      ),
-      padding: EdgeInsets.all(16),
+    return Card(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
