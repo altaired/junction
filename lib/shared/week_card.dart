@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junction/shared/circle_graph.dart';
 import 'package:junction/shared/circle_widget.dart';
 
 class WeekCard extends StatelessWidget {
@@ -32,13 +33,7 @@ class WeekCard extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              child: Center(child: Stack(
-                alignment: Alignment.center,
-                children: <Widget>[
-                  CircleWidget(size: 150),
-                  CircleWidget(size: 100),
-                ],
-              ))
+              child: Center(child: CircleGraph())
             ),
           ),
         ],
