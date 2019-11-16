@@ -48,7 +48,7 @@ class DashboardPage extends StatelessWidget {
                                   fontSize: 20.0, color: Colors.white),
                             ),
                             Text(
-                              "Joined 2019-11-16",
+                              "Global rank #209",
                               style: TextStyle(
                                   fontSize: 16.0, color: Colors.white),
                             ),
