@@ -160,7 +160,9 @@ class DashboardPage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                           )),
-                      onPressed: () {},
+                      onPressed: () {
+                        showAboutDialog(context: context, applicationName: "You planted a tree");
+                      },
                     ),
                     Text(
                       "1 tree = \$1",
