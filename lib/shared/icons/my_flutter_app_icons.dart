@@ -21,4 +21,5 @@ class MyFlutterApp {
   static const _kFontFam = 'MyFlutterApp';
 
   static const IconData trophy = const IconData(0xe800, fontFamily: _kFontFam);
+  static const IconData leaf = const IconData(0xe802, fontFamily: _kFontFam);
 }
