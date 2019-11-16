@@ -48,6 +48,12 @@ flutter:
   assets:
     - assets/icons/
     - assets/achivements/
+
+
+  fonts:
+    - family:  MyFlutterApp
+      fonts:
+        - asset: assets/fonts/MyFlutterApp.ttf
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

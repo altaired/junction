@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:junction/services/data.dart';
 import 'package:junction/shared/ColorPalatte.dart';
 import 'package:junction/shared/bar_chart.dart';
 
 class DashboardPage extends StatelessWidget {
-  final List<Product> _products = [
-    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
-    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
-    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
-    Product(desc: "CocaCola Zero", amount: 100, emission: 12),
-  ];
+  List<Product> _products = DataService.products;
 
   @override
   Widget build(BuildContext context) {
+    _products.sort(
+        (a, b) => ((b.emission * b.amount) - (a.emission * a.amount)).round());
+    _products = _products.sublist(0, 3);
     return ListView(
       children: <Widget>[
         Center(
