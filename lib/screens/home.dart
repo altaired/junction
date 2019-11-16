@@ -21,7 +21,8 @@ class _EntriesPageState extends State<EntriesPage> {
             itemBuilder: (BuildContext context, int index) {
               final String title = widget.items?.elementAt(index) ?? "";
               return Container(
-                height: 250,
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                height: 330,
                 child: WeekCard(
                   key: Key(title),
                   title: title,
