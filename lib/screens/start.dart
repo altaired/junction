@@ -30,13 +30,14 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor: ColorPalatte.backgroundColor,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: this.selectedItemColor,
         unselectedItemColor: this.unselectedItemColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        backgroundColor: Color.,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
             icon: Icon(

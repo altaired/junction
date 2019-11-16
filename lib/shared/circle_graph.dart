@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:junction/models/group.dart';
+import 'package:junction/shared/ColorPalatte.dart';
 
 import 'circle_widget.dart';
 
@@ -22,8 +23,8 @@ class CircleGraph extends StatelessWidget {
       groups
           .map((g) => g.getAvgFootprint())
           .where((fp) => fp < myFootprint).length != 0
-          ? Colors.red
-          : Colors.green;
+          ? Colors.redAccent
+          : Colors.greenAccent;
 
     List<Widget> refCircles =
       groups
@@ -40,7 +41,7 @@ class CircleGraph extends StatelessWidget {
               width: myFootprint.toDouble(),
               height: myFootprint.toDouble(),
               decoration: new BoxDecoration(
-                color: Colors.blueGrey,
+                color: ColorPalatte.saphireBlue,
                 shape: BoxShape.circle,
               ),
             ),
