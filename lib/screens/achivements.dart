@@ -4,12 +4,20 @@ import 'package:tuple/tuple.dart';
 
 class AchivementsPage extends StatelessWidget {
 
-  static final greenFingers = Tuple2('assets/icons/treePlanterAchivement.png', 'Green Fingers');
+  static final basePath = 'assets/achivements/';
+
+  static final carbonCutter = Tuple2(basePath + 'carbonCutter.png', 'Carbon Cutter');
+  static final documentHunter = Tuple2(basePath + 'documentHunter.png', 'Document Hunter');
+  static final overAchiver = Tuple2(basePath + 'overAchiver.png', 'Overachiever');
+  static final payToWin = Tuple2(basePath + 'payToWin.png', 'Pay To Win');
+  static final recordBad = Tuple2(basePath + 'recordBad.png', 'Record Bad');
+  static final treePlanterAchivement = Tuple2(basePath + 'treePlanterAchivement.png', 'Green Fingers');
+
 
   final List<List<Tuple2<String, String>>> achivementsMatrix =
       [
-        [greenFingers, greenFingers, greenFingers],
-        [greenFingers, greenFingers],
+        [carbonCutter, documentHunter, overAchiver],
+        [payToWin, recordBad, treePlanterAchivement],
       ];
 
   @override

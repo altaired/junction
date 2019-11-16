@@ -36,7 +36,6 @@ class _StartPageState extends State<StartPage> {
         unselectedItemColor: this.unselectedItemColor,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        backgroundColor: Color.,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
