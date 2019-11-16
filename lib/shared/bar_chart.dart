@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
-
-class BarChartAggragate extends StatelessWidget {
+class BarChart extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
 
-  BarChartAggragate(this.seriesList, {this.animate});
+  BarChart(this.seriesList, {this.animate});
 
   /// Creates a stacked [BarChart] with sample data and no transition.
-  factory BarChartAggragate.withSampleData() {
-    return new BarChartAggragate(
+  factory BarChart.withSampleData() {
+    return new BarChart(
       _createSampleData(),
       // Disable animations for image tests.
       animate: false,
@@ -24,7 +23,7 @@ class BarChartAggragate extends StatelessWidget {
         barGroupingType: charts.BarGroupingType.stacked,
         customSeriesRenderers: [
           new charts.BarTargetLineRendererConfig<String>(
-            // ID used to link series to this renderer.
+              // ID used to link series to this renderer.
               customRendererId: 'customTargetLine',
               groupingType: charts.BarGroupingType.stacked)
         ]);
@@ -57,36 +56,32 @@ class BarChartAggragate extends StatelessWidget {
       new charts.Series<OrdinalCarbonData, String>(
         id: 'personalclimateCompensated',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
-        measureFn: (OrdinalCarbonData carbonData, _) => carbonData.climateCompensated,
+        measureFn: (OrdinalCarbonData carbonData, _) =>
+            carbonData.climateCompensated,
         data: personalCarbonData,
       ),
-
       new charts.Series<OrdinalCarbonData, String>(
         id: 'personalCarbonData',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
-        measureFn: (OrdinalCarbonData carbonData, _) => carbonData.totalCarbon - carbonData.climateCompensated,
+        measureFn: (OrdinalCarbonData carbonData, _) =>
+            carbonData.totalCarbon - carbonData.climateCompensated,
         data: personalCarbonData,
       ),
-
       new charts.Series<OrdinalCarbonData, String>(
         id: 'group Target Line Data',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) => carbonData.totalCarbon,
         data: groupTargetLineData,
-      )
-        ..setAttribute(charts.rendererIdKey, 'customTargetLine'),
+      )..setAttribute(charts.rendererIdKey, 'customTargetLine'),
       new charts.Series<OrdinalCarbonData, String>(
         id: 'persona lTarget Line Data',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) => carbonData.totalCarbon,
         data: personalTargetLineData,
-      )
-        ..setAttribute(charts.rendererIdKey, 'customTargetLine'),
+      )..setAttribute(charts.rendererIdKey, 'customTargetLine'),
     ];
   }
-
 }
-
 
 class OrdinalCarbonData {
   final String date;
@@ -95,4 +90,3 @@ class OrdinalCarbonData {
 
   OrdinalCarbonData(this.date, this.totalCarbon, this.climateCompensated) {}
 }
-

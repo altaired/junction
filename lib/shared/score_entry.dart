@@ -15,13 +15,15 @@ class ScoreEntry {
   TableRow asTableRow(Color textColor, double textSize) {
     return TableRow(
       children: <Widget>[
-        Center(
+        Align(
+          alignment: Alignment.centerLeft,
           child: Text(
             this.pos.toString(),
             style: TextStyle(fontSize: textSize),
           ),
         ),
-        Center(
+        Align(
+          alignment: Alignment.centerLeft,
           child: Text(
             this.title,
             style: TextStyle(
@@ -30,7 +32,8 @@ class ScoreEntry {
                 fontSize: textSize),
           ),
         ),
-        Center(
+        Align(
+          alignment: Alignment.centerRight,
           child: Text(
             this.emission.toString(),
             style: TextStyle(
@@ -39,7 +42,8 @@ class ScoreEntry {
             ),
           ),
         ),
-        Center(
+        Align(
+          alignment: Alignment.centerRight,
           child: Text(
             this.score.toString(),
             style: TextStyle(

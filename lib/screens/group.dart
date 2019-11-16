@@ -4,7 +4,7 @@ import 'package:junction/shared/models/group.dart';
 import 'package:junction/shared/score_entry.dart';
 
 class GroupPage extends StatelessWidget {
-  final Color textColor = Color.fromARGB(100, 74, 74, 74);
+  final Color textColor = Colors.black;
   final double textSize = 16.0;
 
   final List<ScoreEntry> data = [
@@ -21,7 +21,7 @@ class GroupPage extends StatelessWidget {
           Header(title: group.title),
           Expanded(
               child: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Table(
               children: this.data.map((o) {
                 return o.asTableRow(this.textColor, this.textSize);
