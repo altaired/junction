@@ -11,8 +11,8 @@ class DataService {
   static final Leaderboard groupLeaderboard = Leaderboard(
     title: "Group",
     entries: [
-      LeaderboardEntry(name: "Simon Persson", score: 20012, emission: 2002),
-      LeaderboardEntry(name: "Alexander Tuoma", score: 20011, emission: 2001),
+      LeaderboardEntry(name: "Simon Persson", score: 34, emission: 34),
+      LeaderboardEntry(name: "Alexander Tuoma", score: 38, emission: 38),
     ],
   );
 
