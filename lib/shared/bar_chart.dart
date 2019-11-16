@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:junction/shared/ColorPalatte.dart';
 
 class BarChart extends StatelessWidget {
   final List<charts.Series> seriesList;
@@ -58,6 +59,7 @@ class BarChart extends StatelessWidget {
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) =>
             carbonData.climateCompensated,
+        colorFn: (a, b) => toChartColor(ColorPalatte.resedaGreen),
         data: personalCarbonData,
       ),
       new charts.Series<OrdinalCarbonData, String>(
@@ -65,21 +67,29 @@ class BarChart extends StatelessWidget {
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) =>
             carbonData.totalCarbon - carbonData.climateCompensated,
+        colorFn: (a,b) => toChartColor(ColorPalatte.saphireBlue),
         data: personalCarbonData,
       ),
       new charts.Series<OrdinalCarbonData, String>(
         id: 'group Target Line Data',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) => carbonData.totalCarbon,
+        colorFn: (a, b) => toChartColor(ColorPalatte.emeraldGreen),
         data: groupTargetLineData,
       )..setAttribute(charts.rendererIdKey, 'customTargetLine'),
       new charts.Series<OrdinalCarbonData, String>(
         id: 'persona lTarget Line Data',
         domainFn: (OrdinalCarbonData carbonData, _) => carbonData.date,
         measureFn: (OrdinalCarbonData carbonData, _) => carbonData.totalCarbon,
+        colorFn: (a, b) => toChartColor(ColorPalatte.emeraldGreen),
         data: personalTargetLineData,
       )..setAttribute(charts.rendererIdKey, 'customTargetLine'),
     ];
+  }
+
+  static charts.Color toChartColor(Color color){
+    return new charts.Color(
+        r: color.red, g: color.green, b: color.blue, a: color.alpha);
   }
 }
 
@@ -88,5 +98,6 @@ class OrdinalCarbonData {
   final int totalCarbon;
   final int climateCompensated;
 
-  OrdinalCarbonData(this.date, this.totalCarbon, this.climateCompensated) {}
+  OrdinalCarbonData(this.date, this.totalCarbon, this.climateCompensated){}
+
 }
