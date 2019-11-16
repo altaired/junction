@@ -17,7 +17,8 @@ class _StartPageState extends State<StartPage> {
     HomePage(),
     GroupsPage(),
     DashboardPage(),
-    LearderboardPage(),
+    LeaderboardPage(),
+    LeaderboardPage(),
   ];
 
   final double iconSize = 34.0;
@@ -63,6 +64,13 @@ class _StartPageState extends State<StartPage> {
             ),
             title: Text('Achivements'),
           ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.list,
+              size: this.iconSize,
+            ),
+            title: Text('Leaderboards'),
+          ),
         ],
       ),
       body: AnimatedContainer(
@@ -74,7 +82,7 @@ class _StartPageState extends State<StartPage> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      this._selectedIndex = index;
     });
   }
 }
