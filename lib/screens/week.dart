@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:junction/screens/dashboard.dart';
 import 'package:junction/services/data.dart';
 import 'package:junction/shared/header.dart';
+import 'package:junction/shared/table_row_text.dart';
 
 class WeekPage extends StatelessWidget {
   final List<Product> _products = DataService.products;
@@ -31,19 +32,8 @@ class WeekPage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Table(
-              children: this._products.map((pr) {
-                return TableRow(
-                  children: <Widget>[
-                    Center(child: Text(pr.desc)),
-                    Center(child: Text(pr.amount.toString() + " st")),
-                    Center(child: Text(pr.emission.toString() + " CO2")),
-                    Center(
-                      child:
-                          Text((pr.amount * pr.emission).toString() + " CO2"),
-                    ),
-                  ],
-                );
-              }).toList(),
+              children:
+                  ProductRowBuilder.build(this._products.take(8).toList()),
             ),
           )
         ],

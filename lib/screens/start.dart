@@ -29,7 +29,7 @@ class _StartPageState extends State<StartPage> {
       color: ColorPalatte.blueLilac, semanticsLabel: 'a purple trophy');
 
   final double iconSize = 34.0;
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   @override
   Widget build(BuildContext context) {
