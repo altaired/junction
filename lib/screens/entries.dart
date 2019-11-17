@@ -8,7 +8,7 @@ class EntriesPage extends StatefulWidget {
   @override
   _EntriesPageState createState() => _EntriesPageState();
 
-  final List<String> items = ["Week 43", "Week 42", "Week 41"];
+  final List<String> items = ["September", "October", "Nobember"];
 }
 
 class _EntriesPageState extends State<EntriesPage> {
