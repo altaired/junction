@@ -65,16 +65,21 @@ class WeekCard extends StatelessWidget {
             child: Table(
                 children: DataService.products
                     .take(3)
-                    .map((p) => TableRow(
-                            children: [
-                          Text(p.desc.substring(0, 8)),
-                          Text(p.emission.toString())
-                        ]
-                                .map((w) => Padding(
+                    .map(
+                      (p) => TableRow(
+                          children: [
+                        Text(p.desc.substring(0, 8)),
+                        Text(p.emission.toString()),
+                      ]
+                              .map((w) => Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 40, vertical: 4),
-                                    child: w))
-                                .toList()))
+                                      horizontal: 40,
+                                      vertical: 4,
+                                    ),
+                                    child: w,
+                                  ))
+                              .toList()),
+                    )
                     .toList()),
           )
         ],
